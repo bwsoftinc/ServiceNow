@@ -1,4 +1,7 @@
 # ServiceNow
+
+I tried to demonstrate my abilities and to come up with solutions that are not just quick an dirty algorithms, but to take the opportunity to show implementations that leverage design patterns and principles of OOP, and SOLID principles.
+
 ## Programming Exercise 1, Hashtables
 
 Could be a little overkill in design and architecture for algorithm questions but wanted to use the opportunity to highlight design and architecture abilities.
