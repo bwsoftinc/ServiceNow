@@ -1,6 +1,5 @@
 # ServiceNow
-## Programming Exercise
-
+## Programming Exercise 1, Hashtables
 
 Could be a little overkill in design and architecture for algorithm questions but wanted to use the opportunity to highlight design and architecture abilities.
 
@@ -13,3 +12,6 @@ Second implementation is a complex hashtable that has a growing bucket collectio
 Each impementation's internals (bucket collections and buckets) are built by a factory to make sure compatible types are used together.
 
 By going to this extreme I hope to also show was not just code looked on google.  There would be nothing else out there like this.
+
+## Programming Exercise 2, Grid board
+
