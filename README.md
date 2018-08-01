@@ -18,13 +18,11 @@ By going to this extreme I hope to also show was not just code looked on google.
 
 ## Programming Exercise 2, Grid board
 
-After reading the question it can be quickly determined the graph structure is a much better solution than keeping the data then in tabular format.   In each Node of the graph/tree structure there is a linked list of pointers to nodes which are the node's neighbors in up to 8 directions if they exist in the tabular layout.
+After reading the question it can be quickly determined this is a graph structure. In each Node of the graph/tree structure there is a linked list of pointers to nodes which are the node's neighbors in up to 8 directions if they exist in the tabular layout.
 
-Based on the requirements a Node within the graph will also need to keep track of when it has been visited and the value of the node.  As well, the start and end nodes must be defined in the graph so that the graph can be traversed.
+Based on the requirements a Node within the graph will also need to keep track of when it has been visited and the value of the node.  As well, the start and end nodes must be defined in the graph so that the graph can be traversed.  This was left up to the implementation; instead of always starting at top left and ending in bottom right, the the start and end nodes are selectible by the graph adapter.
 
-I recognized the best traversal method to collect a maximum sum of the paths in a grid search is a DFS (depth first search) implementation.  
-
-Again, I took the oporunity to implement some design patterns, in an adpater pattern to turn a Grid into a Graph, that is also proxy pattern to defer building the graph structure until requested, and also to cache that build Graph within the adapter.
+The necessary algorithm becomes an implementation of Longest Path in a Directed Acyclic Graph nd again took I the oporunity to implement some design patterns, in an adpater pattern to turn a Grid into a Graph, that is also proxy pattern to defer building the graph structure until requested, and also to cache that build Graph within the adapter.
 
 ## Original Questions
 
