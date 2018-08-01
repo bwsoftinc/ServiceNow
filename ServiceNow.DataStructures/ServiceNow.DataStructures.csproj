@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>f445297c-9b4e-4b07-9f1a-e0431b628ff6</ProjectGuid>
+    <ProjectGuid>{F445297C-9B4E-4B07-9F1A-E0431B628FF6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ServiceNow</RootNamespace>
-    <AssemblyName>ServiceNow</AssemblyName>
+    <RootNamespace>ServiceNow.DataStructures</RootNamespace>
+    <AssemblyName>ServiceNow.DataStructures</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,24 +30,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BucketStrategies\ISingleItemBucket.cs" />
+    <Compile Include="BucketStrategies\IMultiItemBucket.cs" />
+    <Compile Include="BucketStrategies\LinkedListBucket.cs" />
+    <Compile Include="Factories\BucketsFactory.cs" />
+    <Compile Include="BucketStrategies\IBuckets.cs" />
+    <Compile Include="BucketStrategies\IBucket.cs" />
+    <Compile Include="BucketStrategies\KeyValue.cs" />
+    <Compile Include="BucketStrategies\MultiItemBuckets.cs" />
+    <Compile Include="EqualityComparerStrategies\ByReferceAndValueKeyEqualityComparer.cs" />
+    <Compile Include="EqualityComparerStrategies\IKeyEqualityComparer.cs" />
+    <Compile Include="HashGeneratorStrategies\ObjectFrameworkHashGenerator.cs" />
+    <Compile Include="HashGeneratorStrategies\IHashGenerator.cs" />
+    <Compile Include="ComplexHashTable.cs" />
+    <Compile Include="SimpleHashTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
