@@ -22,7 +22,7 @@ After reading the question it can be quickly determined the graph structure is a
 
 Based on the requirements a Node within the graph will also need to keep track of when it has been visited and the value of the node.  As well, the start and end nodes must be defined in the graph so that the graph can be traversed.
 
-I recognized the best traversal method to collect a maximum sum of the paths in a grid search best served by a DFS (depth first search) implementation.  
+I recognized the best traversal method to collect a maximum sum of the paths in a grid search is a DFS (depth first search) implementation.  
 
 Again, I took the oporunity to implement some design patterns, in an adpater pattern to turn a Grid into a Graph, that is also proxy pattern to defer building the graph structure until requested, and also to cache that build Graph within the adapter.
 
