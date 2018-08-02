@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace ServiceNow.GridNav
 {
@@ -7,7 +8,8 @@ namespace ServiceNow.GridNav
     /// Each grid coordate is represented as a tree node and each of the neighboring nodes
     /// is added to the adjoining nodes collection
     /// </summary>
-    public class GridTreeNode
+    [DebuggerDisplay("Distance = {Distance}, Value = {Value}")]
+    public class GraphNode
     {
         /// <summary>
         /// The value at the grid coordinate
@@ -15,9 +17,9 @@ namespace ServiceNow.GridNav
         public long Value { get; set; }
 
         /// <summary>
-        /// An indicator whether this is the final node as denoted by the bottom right most coordinate in the grid representation
+        /// The vertext distance of this node to the end
         /// </summary>
-        public bool TargetNode { get; set; }
+        public long Distance { get; set; }
 
         /// <summary>
         /// Whether this node has been visited alread during traversal
@@ -27,7 +29,7 @@ namespace ServiceNow.GridNav
         /// <summary>
         /// All the neighboring nodes
         /// </summary>
-        public List<GridTreeNode> AdjacentNodes { get; set; } = new List<GridTreeNode>();
+        public List<GraphNode> AdjacentNodes { get; set; } = new List<GraphNode>();
     }
 }
 

@@ -1,6 +1,4 @@
-﻿using ServiceNow.DataStructures.EqualityComparerStrategies;
-
-namespace ServiceNow.DataStructures.BucketStrategies
+﻿namespace ServiceNow.DataStructures.Strategies.Bucket
 {
     /// <summary>
     /// Interface representation of a single bucket slot that supports more than one item in the bucket
@@ -14,11 +12,6 @@ namespace ServiceNow.DataStructures.BucketStrategies
         /// <param name="key">The key to check for</param>
         /// <returns>Whether the key was found in this bucket</returns>
         bool ContainsKey(object key);
-
-        /// <summary>
-        /// How to compare key equality
-        /// </summary>
-        IKeyEqualityComparer comparer { get; }
 
         /// <summary>
         /// Retrieve the related value for the key from this bucket

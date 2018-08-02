@@ -5,7 +5,7 @@ using ServiceNow.DataStructures;
 namespace ServiceNow.Tests
 {
     [TestClass]
-    public class BWHashTableContainsTests
+    public class SimpleHashTableContainsTests
     {
         [TestMethod]
         public void Rejects_Null_Key()

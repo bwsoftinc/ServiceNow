@@ -1,4 +1,4 @@
-﻿namespace ServiceNow.DataStructures.EqualityComparerStrategies
+﻿namespace ServiceNow.DataStructures.Strategies.EqualityComparer
 {
     /// <summary>
     /// A strategy pattern interface to determine how equality of keys is to be compared

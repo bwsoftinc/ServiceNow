@@ -40,18 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BucketStrategies\ISingleItemBucket.cs" />
-    <Compile Include="BucketStrategies\IMultiItemBucket.cs" />
-    <Compile Include="BucketStrategies\LinkedListBucket.cs" />
-    <Compile Include="Factories\BucketsFactory.cs" />
-    <Compile Include="BucketStrategies\IBuckets.cs" />
-    <Compile Include="BucketStrategies\IBucket.cs" />
-    <Compile Include="BucketStrategies\KeyValue.cs" />
-    <Compile Include="BucketStrategies\MultiItemBuckets.cs" />
-    <Compile Include="EqualityComparerStrategies\ByReferceAndValueKeyEqualityComparer.cs" />
-    <Compile Include="EqualityComparerStrategies\IKeyEqualityComparer.cs" />
-    <Compile Include="HashGeneratorStrategies\ObjectFrameworkHashGenerator.cs" />
-    <Compile Include="HashGeneratorStrategies\IHashGenerator.cs" />
+    <Compile Include="Strategies\BucketCollection\SingleItemBucketCollection.cs" />
+    <Compile Include="Strategies\Bucket\ISingleItemBucket.cs" />
+    <Compile Include="Strategies\Bucket\IMultiItemBucket.cs" />
+    <Compile Include="Strategies\Bucket\KeyValueBucket.cs" />
+    <Compile Include="Strategies\Bucket\LinkedListBucket.cs" />
+    <Compile Include="Factories\BucketCollectionFactory.cs" />
+    <Compile Include="Strategies\BucketCollection\IBucketCollection.cs" />
+    <Compile Include="Strategies\Bucket\IBucket.cs" />
+    <Compile Include="Strategies\Bucket\KeyValue.cs" />
+    <Compile Include="Strategies\BucketCollection\MultiItemBucketCollection.cs" />
+    <Compile Include="Strategies\EqualityComparer\ByReferceAndValueKeyEqualityComparer.cs" />
+    <Compile Include="Strategies\EqualityComparer\IKeyEqualityComparer.cs" />
+    <Compile Include="Strategies\HashGenerator\ObjectFrameworkHashGenerator.cs" />
+    <Compile Include="Strategies\HashGenerator\IHashGenerator.cs" />
     <Compile Include="ComplexHashTable.cs" />
     <Compile Include="SimpleHashTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

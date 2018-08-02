@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using ServiceNow.DataStructures.EqualityComparerStrategies;
+using ServiceNow.DataStructures.Strategies.EqualityComparer;
 
-namespace ServiceNow.DataStructures.BucketStrategies
+namespace ServiceNow.DataStructures.Strategies.Bucket
 {
     /// <summary>
     /// A strategy implementation of the IBucket interface defining how a key value item shall be stored and retrieved in a bucket

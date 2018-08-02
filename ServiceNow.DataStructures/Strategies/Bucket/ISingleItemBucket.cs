@@ -1,4 +1,4 @@
-﻿namespace ServiceNow.DataStructures.BucketStrategies
+﻿namespace ServiceNow.DataStructures.Strategies.Bucket
 {
     /// <summary>
     /// Interface representation of a single bucket slot that supports only one item in the bucket

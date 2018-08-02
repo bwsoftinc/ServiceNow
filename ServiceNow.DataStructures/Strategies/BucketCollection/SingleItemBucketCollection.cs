@@ -1,8 +1,9 @@
 ﻿using System;
-using ServiceNow.DataStructures.HashGeneratorStrategies;
-using ServiceNow.DataStructures.EqualityComparerStrategies;
+using ServiceNow.DataStructures.Strategies.Bucket;
+using ServiceNow.DataStructures.Strategies.HashGenerator;
+using ServiceNow.DataStructures.Strategies.EqualityComparer;
 
-namespace ServiceNow.DataStructures.BucketStrategies
+namespace ServiceNow.DataStructures.Strategies.BucketCollection
 {
     /// <summary>
     /// The bucket impelementation using a generic bucket type to be determined by the caller
@@ -10,7 +11,7 @@ namespace ServiceNow.DataStructures.BucketStrategies
     /// Be sure to use a TBucket implementation that can accommidate more than one item
     /// Note: does not support null keys
     /// </summary>
-    internal class MultiItemBuckets<TBucket> : IBuckets where TBucket : IMultiItemBucket, new()
+    internal class SingleItemBucketCollection<TBucket> : IBucketCollection where TBucket : ISingleItemBucket, new()
     {
         /// <summary>
         /// The implementation used to determine a hash code of the key
@@ -45,7 +46,7 @@ namespace ServiceNow.DataStructures.BucketStrategies
         /// <param name="size">the number of buckets</param>
         /// <param name="hash">the hashing implementation</param>
         /// <param name="comparer">the equality comparer implementation</param>
-        public MultiItemBuckets(int size, IHashGenerator hash, IKeyEqualityComparer comparer)
+        public SingleItemBucketCollection(int size, IHashGenerator hash, IKeyEqualityComparer comparer)
         {
             this.hash = hash;
             this.comparer = comparer;
@@ -78,7 +79,7 @@ namespace ServiceNow.DataStructures.BucketStrategies
                 throw new ArgumentNullException(nameof(key) + " cannot be null");
 
             var index = GetBucketIndex(key);
-            return ((IMultiItemBucket)Buckets[index]).ContainsKey(key);
+            return false;
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace ServiceNow.DataStructures.BucketStrategies
                 throw new ArgumentNullException(nameof(key) + " cannot be null");
 
             var index = GetBucketIndex(key);
-            ((IMultiItemBucket)Buckets[index]).Remove(key);
+            
         }
 
         /// <summary>
@@ -105,7 +106,7 @@ namespace ServiceNow.DataStructures.BucketStrategies
                 throw new ArgumentNullException(nameof(key) + " cannot be null");
 
             var index = GetBucketIndex(key);
-            ((IMultiItemBucket)Buckets[index]).Add(key, value);
+            
         }
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace ServiceNow.DataStructures.BucketStrategies
                 throw new ArgumentNullException(nameof(key) + " cannot be null");
 
             var index = GetBucketIndex(key);
-            return ((IMultiItemBucket)Buckets[index]).Get(key);
+            return null;   
         }
     }
 }

@@ -5,7 +5,7 @@ using ServiceNow.DataStructures;
 namespace ServiceNow.Tests
 {
     [TestClass]
-    public class BWHashTableRemoveTests
+    public class SimpleHashTableRemoveTests
     {
         [TestMethod]
         public void Rejects_Null_Key()
@@ -158,7 +158,5 @@ namespace ServiceNow.Tests
 
             Assert.IsTrue(valid);
         }
-
-
     }
 }

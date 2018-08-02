@@ -1,4 +1,4 @@
-﻿namespace ServiceNow.DataStructures.HashGeneratorStrategies
+﻿namespace ServiceNow.DataStructures.Strategies.HashGenerator
 {
     /// <summary>
     /// A strategy pattern interface to determine how to generate hash codes

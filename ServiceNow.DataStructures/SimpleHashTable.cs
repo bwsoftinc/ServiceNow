@@ -1,8 +1,9 @@
 ﻿using System;
 using ServiceNow.DataStructures.Factories;
-using ServiceNow.DataStructures.BucketStrategies;
-using ServiceNow.DataStructures.HashGeneratorStrategies;
-using ServiceNow.DataStructures.EqualityComparerStrategies;
+using ServiceNow.DataStructures.Strategies.Bucket;
+using ServiceNow.DataStructures.Strategies.HashGenerator;
+using ServiceNow.DataStructures.Strategies.BucketCollection;
+using ServiceNow.DataStructures.Strategies.EqualityComparer;
 
 namespace ServiceNow.DataStructures
 {
@@ -19,7 +20,7 @@ namespace ServiceNow.DataStructures
         /// <summary>
         /// Internal storage of the HashTable keys and values
         /// </summary>
-        protected IBuckets buckets;
+        protected IBucketCollection buckets;
 
         /// <summary>
         /// The maximum prime number that is still a valid size of an array
@@ -60,7 +61,7 @@ namespace ServiceNow.DataStructures
             if (comparer == null || keyhash == null)
                 throw new ArgumentNullException("Key comparer and key hash implementations cannot be null");
 
-            buckets = BucketsFactory.MakeBuckets<IMultiItemBucket>(size, keyhash, comparer);
+            buckets = BucketCollectionFactory.MakeBuckets<IMultiItemBucket>(size, keyhash, comparer);
         }
 
         #endregion

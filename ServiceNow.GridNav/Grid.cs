@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace ServiceNow.GridNav
 {
@@ -37,7 +38,10 @@ namespace ServiceNow.GridNav
                 throw new ArgumentNullException("there must be grid values");
 
             if (height < 1 || width < 1)
-                throw new ArgumentNullException("invalid dimensions");
+                throw new ArgumentOutOfRangeException("invalid dimensions");
+
+            if(numbers.Any(n => n == long.MinValue))
+                throw new ArgumentOutOfRangeException("invalid node value, cannot be long.minvalue");
 
             //validate there are all grid values for the game board dimensions
             if (height * width != numbers.Length)

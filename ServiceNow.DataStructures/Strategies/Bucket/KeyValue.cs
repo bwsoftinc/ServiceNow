@@ -1,4 +1,4 @@
-﻿namespace ServiceNow.DataStructures.BucketStrategies
+﻿namespace ServiceNow.DataStructures.Strategies.Bucket
 {
     /// <summary>
     /// The basic data structure for a key and value pair in the hash table

@@ -48,12 +48,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GridNav\GridNavDimensions.cs" />
     <Compile Include="SimpleHashTable\SimpleHashTableContainsTests.cs" />
     <Compile Include="SimpleHashTable\SimpleHashTableRemoveTests.cs" />
     <Compile Include="SimpleHashTable\SimpleHashTableGetTests.cs" />
     <Compile Include="SimpleHashTable\SimpleHashTableAddTests.cs" />
     <Compile Include="SimpleHashTable\SimpleHashTableInitializationTests.cs" />
-    <Compile Include="GridNav\GridNavTests.cs" />
+    <Compile Include="GridNav\GridNavRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

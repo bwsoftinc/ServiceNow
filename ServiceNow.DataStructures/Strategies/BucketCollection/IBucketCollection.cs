@@ -1,9 +1,11 @@
-﻿namespace ServiceNow.DataStructures.BucketStrategies
+﻿using ServiceNow.DataStructures.Strategies.Bucket;
+
+namespace ServiceNow.DataStructures.Strategies.BucketCollection
 {
     /// <summary>
     /// An interface to define strategies of how to store and access a collection of buckets
     /// </summary>
-    public interface IBuckets
+    public interface IBucketCollection
     {
         /// <summary>
         /// The internal storage of buckets

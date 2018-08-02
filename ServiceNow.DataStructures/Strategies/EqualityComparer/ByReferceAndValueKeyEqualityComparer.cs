@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ServiceNow.DataStructures.EqualityComparerStrategies
+namespace ServiceNow.DataStructures.Strategies.EqualityComparer
 {
     /// <summary>
     /// A strategy pattern implementation to determine equality of two keys by first comparing their equality by reference and then by value

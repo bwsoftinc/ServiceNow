@@ -1,6 +1,6 @@
-﻿using ServiceNow.DataStructures.EqualityComparerStrategies;
+﻿using ServiceNow.DataStructures.Strategies.EqualityComparer;
 
-namespace ServiceNow.DataStructures.BucketStrategies
+namespace ServiceNow.DataStructures.Strategies.Bucket
 {
     /// <summary>
     /// Interface representation of a single bucket slot for a particular hash code in a bucket collection

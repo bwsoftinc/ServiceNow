@@ -5,7 +5,7 @@ using ServiceNow.DataStructures;
 namespace ServiceNow.Tests
 {
     [TestClass]
-    public class BWHashTableInitializationTests
+    public class SimpleHashTableInitializationTests
     {
         [TestMethod]
         public void Rejects_Negative_Initialization_Size()
