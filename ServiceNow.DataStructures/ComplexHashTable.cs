@@ -17,11 +17,11 @@ namespace ServiceNow.DataStructures
         #region Constructors
 
         /// <summary>
-        /// Initializs the hashtable with the provided size, default 4049
+        /// Initializs the hashtable with the provided size, default 3
         /// Initializes default ObjectFrameworkHashGenerator and ByReferenceAndValueKeyEqualityComparer strategies
         /// </summary>
         /// <param name="size">The size of the hashtable to initialize</param>
-        public ComplexHashTable(int size = 4049) : this(size, new ObjectFrameworkHashGenerator()) { }
+        public ComplexHashTable(int size = 3) : this(size, new ObjectFrameworkHashGenerator()) { }
 
         /// <summary>
         /// Initializs the hashtable with the provided size

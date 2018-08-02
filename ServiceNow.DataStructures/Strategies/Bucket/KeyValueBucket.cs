@@ -7,9 +7,14 @@ namespace ServiceNow.DataStructures.Strategies.Bucket
     /// </summary>
     public class KeyValueBucket : KeyValue, ISingleItemBucket
     {
-        public bool HasCollision { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-        public int HashCode { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        public KeyValueBucket() : this(new ByReferenceAndValueKeyEqualityComparer()) { }
 
-        public IKeyEqualityComparer comparer => throw new System.NotImplementedException();
+        public KeyValueBucket(IKeyEqualityComparer comparer) { }
+
+        public bool HasCollision { get; set; }
+
+        public int HashCode { get; set; }
+
+        public IKeyEqualityComparer comparer { get; private set; }
     }
 }

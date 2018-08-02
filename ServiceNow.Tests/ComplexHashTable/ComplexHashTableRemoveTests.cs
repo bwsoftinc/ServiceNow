@@ -5,12 +5,12 @@ using ServiceNow.DataStructures;
 namespace ServiceNow.Tests.HashTable
 {
     [TestClass]
-    public class SimpleHashTableRemoveTests
+    public class ComplexHashTableRemoveTests
     {
         [TestMethod]
         public void Rejects_Null_Key()
         {
-            var ht = new SimpleHashTable();
+            var ht = new ComplexHashTable();
             var valid = true;
 
             try
@@ -29,7 +29,7 @@ namespace ServiceNow.Tests.HashTable
         public void Rejects_Missing_Key_In_Overloaded_Bucket()
         {
             //all go into same bucket
-            var ht = new SimpleHashTable(1);
+            var ht = new ComplexHashTable(1);
             ht.Add(1, 1);
             var valid = true;
 
@@ -48,7 +48,7 @@ namespace ServiceNow.Tests.HashTable
         [TestMethod]
         public void Rejects_Missing_Bucket()
         {
-            var ht = new SimpleHashTable();
+            var ht = new ComplexHashTable();
             var valid = true;
 
             try
@@ -66,7 +66,7 @@ namespace ServiceNow.Tests.HashTable
         [TestMethod]
         public void Leaves_Correct_Value_In_Bucket_After_Remove()
         {
-            var ht = new SimpleHashTable();
+            var ht = new ComplexHashTable();
             ht.Add(1, 1);
             ht.Add(50, 50);
             ht.Remove(50);
@@ -78,7 +78,7 @@ namespace ServiceNow.Tests.HashTable
         public void Removes_Correct_Value_In_Bucket()
         {
             var valid = false;
-            var ht = new SimpleHashTable();
+            var ht = new ComplexHashTable();
             ht.Add(1, 1);
             ht.Add(50, 50);
             ht.Remove(50);
@@ -97,7 +97,7 @@ namespace ServiceNow.Tests.HashTable
         [TestMethod]
         public void Leaves_Correct_Value_In_Overloaded_Bucket_After_Remove()
         {
-            var ht = new SimpleHashTable(1);
+            var ht = new ComplexHashTable(1);
             ht.Add(1, 1);
             ht.Add(2, 2);
             ht.Remove(1);
@@ -109,7 +109,7 @@ namespace ServiceNow.Tests.HashTable
         public void Removes_Correct_Value_In_Overloaded_Bucket()
         {
             var valid = false;
-            var ht = new SimpleHashTable(1);
+            var ht = new ComplexHashTable(1);
             ht.Add(1, 1);
             ht.Add(2, 2);
             ht.Remove(1);
@@ -130,7 +130,7 @@ namespace ServiceNow.Tests.HashTable
         public void Clear_Removes_Items()
         {
             var valid = false;
-            var ht = new SimpleHashTable(1);
+            var ht = new ComplexHashTable(1);
             ht.Add(1, 1);
             ht.Add(2, 2);
             ht.Clear();

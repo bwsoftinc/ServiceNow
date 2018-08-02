@@ -9,11 +9,14 @@ namespace ServiceNow.DataStructures.Factories
     {
         public static IBucketCollection MakeBuckets<TBucket>(int length, IHashGenerator hash, IKeyEqualityComparer comparer) where TBucket : IBucket
         {
+            if (length < 3)
+                length = 3;
+
             if(typeof(IMultiItemBucket).IsAssignableFrom(typeof(TBucket)))
                 return new MultiItemBucketCollection<LinkedListBucket>(length, hash, comparer);
 
             else if (typeof(ISingleItemBucket).IsAssignableFrom(typeof(TBucket)))
-                return new SingleItemBucketCollection<KeyValueBucket>(length, hash, comparer);
+                return new SingleItemBucketCollection<KeyValueBucket>(length, 0.72f, hash, comparer);
 
             return null;
         }

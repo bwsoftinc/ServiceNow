@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceNow.GridNav;
 
-namespace ServiceNow.Tests
+namespace ServiceNow.Tests.GridNav
 {
     [TestClass]
     public class GridNavDimensions

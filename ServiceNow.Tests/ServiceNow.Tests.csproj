@@ -49,6 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GridNav\GridNavDimensions.cs" />
+    <Compile Include="ComplexHashTable\ComplexHashTableAddTests.cs" />
+    <Compile Include="ComplexHashTable\ComplexHashTableContainsTests.cs" />
+    <Compile Include="ComplexHashTable\ComplexHashTableGetTests.cs" />
+    <Compile Include="ComplexHashTable\ComplexHashTableInitializationTests.cs" />
+    <Compile Include="ComplexHashTable\ComplexHashTableRemoveTests.cs" />
     <Compile Include="SimpleHashTable\SimpleHashTableContainsTests.cs" />
     <Compile Include="SimpleHashTable\SimpleHashTableRemoveTests.cs" />
     <Compile Include="SimpleHashTable\SimpleHashTableGetTests.cs" />

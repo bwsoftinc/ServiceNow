@@ -5,12 +5,12 @@ using ServiceNow.DataStructures;
 namespace ServiceNow.Tests.HashTable
 {
     [TestClass]
-    public class SimpleHashTableContainsTests
+    public class ComplexHashTableContainsTests
     {
         [TestMethod]
         public void Rejects_Null_Key()
         {
-            var ht = new SimpleHashTable();
+            var ht = new ComplexHashTable();
             var valid = true;
 
             try
@@ -28,7 +28,7 @@ namespace ServiceNow.Tests.HashTable
         [TestMethod]
         public void Finds_Key_In_Bucket()
         {
-            var ht = new SimpleHashTable();
+            var ht = new ComplexHashTable();
             ht.Add(1, 1);
             ht.Add(2, 2);
 
@@ -39,7 +39,7 @@ namespace ServiceNow.Tests.HashTable
         public void Finds_Key_In_Overloaded_Bucket()
         {
             //all go into same bucket
-            var ht = new SimpleHashTable(1);
+            var ht = new ComplexHashTable(1);
             ht.Add(1, 1);
             ht.Add(2, 2);
 
@@ -49,7 +49,7 @@ namespace ServiceNow.Tests.HashTable
         [TestMethod]
         public void Does_Not_Find_Nonexistant_Key_In_Bucket()
         {
-            var ht = new SimpleHashTable();
+            var ht = new ComplexHashTable();
             ht.Add(1, 1);
 
             Assert.IsFalse(ht.ContainsKey(2));
@@ -59,11 +59,11 @@ namespace ServiceNow.Tests.HashTable
         public void Does_Not_Find_Nonexistant_Key_In_Overloaded_Bucket()
         {
             //all go into same bucket
-            var ht = new SimpleHashTable(1);
-            ht.Add(1, 1);
-            ht.Add(2, 2);
+            var ht = new ComplexHashTable(1);
+            ht.Add(0, 1);
+            ht.Add(0f, 2);
 
-            Assert.IsFalse(ht.ContainsKey(3));
+            Assert.IsFalse(ht.ContainsKey(0m));
         }
     }
 }

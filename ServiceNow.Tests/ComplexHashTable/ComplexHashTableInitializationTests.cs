@@ -5,19 +5,18 @@ using ServiceNow.DataStructures;
 namespace ServiceNow.Tests.HashTable
 {
     [TestClass]
-    public class SimpleHashTableAddTests
+    public class ComplexHashTableInitializationTests
     {
         [TestMethod]
-        public void Rejects_Null_Keys()
+        public void Rejects_Negative_Initialization_Size()
         {
-            var ht = new SimpleHashTable();
             var valid = true;
 
             try
             {
-                ht.Add(null, 1);
+                new ComplexHashTable(-1);
             }
-            catch (ArgumentNullException)
+            catch (ArgumentOutOfRangeException)
             {
                 valid = false;
             }
@@ -26,18 +25,16 @@ namespace ServiceNow.Tests.HashTable
         }
 
         [TestMethod]
-        public void Rejects_Duplicate_Keys()
+        public void Rejects_Greater_Than_Max_Prime_Initialization_Size()
         {
-            var ht = new SimpleHashTable();
-            ht.Add(1, 1);
-
             var valid = true;
+            var maxprime = 0x7FEFFFFD;
 
             try
             {
-                ht.Add(1, 1);
+                new ComplexHashTable(maxprime + 1);
             }
-            catch (ArgumentException)
+            catch (ArgumentOutOfRangeException)
             {
                 valid = false;
             }

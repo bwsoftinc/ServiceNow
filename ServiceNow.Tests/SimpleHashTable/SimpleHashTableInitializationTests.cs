@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServiceNow.DataStructures;
 
-namespace ServiceNow.Tests
+namespace ServiceNow.Tests.HashTable
 {
     [TestClass]
     public class SimpleHashTableInitializationTests

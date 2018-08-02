@@ -5,12 +5,12 @@ using ServiceNow.DataStructures;
 namespace ServiceNow.Tests.HashTable
 {
     [TestClass]
-    public class SimpleHashTableGetTests
+    public class ComplexHashTableGetTests
     {
         [TestMethod]
         public void Rejects_Null_Keys()
         {
-            var ht = new SimpleHashTable();
+            var ht = new ComplexHashTable();
             var valid = true;
 
             try
@@ -26,16 +26,16 @@ namespace ServiceNow.Tests.HashTable
         }
 
         [TestMethod]
-        public void Rejects_Missing_Key_In_Overloaded_Bucket()
+        public void Rejects_Missing_Key_In_Collision()
         {
             //all go into same bucket
-            var ht = new SimpleHashTable(1);
-            ht.Add(1, 1);
+            var ht = new ComplexHashTable(1);
+            ht.Add(0, 1);
             var valid = true;
 
             try
             {
-                ht.Get(2);
+                ht.Get(0f);
             }
             catch (ArgumentException)
             {
@@ -48,7 +48,7 @@ namespace ServiceNow.Tests.HashTable
         [TestMethod]
         public void Rejects_Missing_Bucket()
         {
-            var ht = new SimpleHashTable();
+            var ht = new ComplexHashTable();
             var valid = true;
 
             try
@@ -64,9 +64,9 @@ namespace ServiceNow.Tests.HashTable
         }
 
         [TestMethod]
-        public void Finds_Correct_Value_In_Bucket()
+        public void Finds_Correct_Value()
         {
-            var ht = new SimpleHashTable();
+            var ht = new ComplexHashTable();
             ht.Add(1, 1);
             ht.Add(50, 50);
 
@@ -74,13 +74,13 @@ namespace ServiceNow.Tests.HashTable
         }
 
         [TestMethod]
-        public void Finds_Correct_Value_In_Overloaded_Bucket()
+        public void Finds_Correct_Value_In_Collision()
         {
-            var ht = new SimpleHashTable(1);
-            ht.Add(1, 1);
-            ht.Add(2, 2);
+            var ht = new ComplexHashTable();
+            ht.Add(0, 1);
+            ht.Add(0f, 2);
 
-            Assert.AreEqual(ht.Get(2), 2);
+            Assert.AreEqual(ht.Get(0f), 2);
         }
     }
 }
