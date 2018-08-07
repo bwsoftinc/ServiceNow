@@ -24,6 +24,8 @@ Based on the requirements a Node within the graph will also need to keep track o
 
 The necessary algorithm becomes an implementation of Longest Path in a Directed Acyclic Graph and again took I the opportunity to implement some design patterns, in an adpater pattern to turn a Grid into a Graph, that is also proxy pattern to defer building the graph structure until requested, and also to cache that build Graph within the adapter.
 
+Careful readers may notice the algorithm complexity due to requirements would not conform to a dp-solvable situation such as with djikstra or bellman-ford approaches.  So the closest linear time solution is only going to be an approximation.  The accurate solution can really only be attain in polynomial time complexity which increases exponentially as the grid dimensions grows.  This brute force solution is also included but becomes unusable due to complexity constrainst at nominal test case sizes such as in 8x8 complexity.
+
 ## Original Questions
 
 ![Questions](questions.png)
